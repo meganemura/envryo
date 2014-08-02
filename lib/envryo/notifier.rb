@@ -8,6 +8,17 @@ module Envryo
     def initialize(config = {})
       evernote = EvernoteOAuth::Client.new(:token => config[:evernote_token])
       @note_store = evernote.note_store
+      if config[:evernote_filter]
+        @filter = Evernote::EDAM::NoteStore::NoteFilter.new.tap do |filter|
+          filter.words     = config[:evernote_filter]
+          filter.order     = Evernote::EDAM::Type::NoteSortOrder::UPDATE_SEQUENCE_NUMBER
+          filter.ascending = false
+        end
+
+        @result_spec = Evernote::EDAM::NoteStore::NotesMetadataResultSpec.new.tap do |spec|
+          spec.includeUpdateSequenceNum = true
+        end
+      end
 
       @yo = Yoyo::Yo.new(config[:yo_api_key])
       @yo_user = config[:yo_user]
@@ -19,7 +30,9 @@ module Envryo
       setup
 
       loop do
-        notify if updated?
+        if updated? && detect_event?
+          notify
+        end
         sleep @interval
       end
     end
@@ -31,9 +44,16 @@ module Envryo
     end
 
     def updated?
-      old_count, @update_count = @update_count, current_state.updateCount
+      @latest_count, @update_count = @update_count, current_state.updateCount
 
-      old_count != @update_count
+      @latest_count != @update_count
+    end
+
+    def detect_event?
+      return true unless @filter
+
+      metadata = @note_store.findNotesMetadata(@filter, 0, 1, @result_spec)
+      metadata.notes.any? {|note| note.updateSequenceNum > @latest_count }
     end
 
     def notify

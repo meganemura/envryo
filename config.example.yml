@@ -1,4 +1,8 @@
-evernote_token: "Your evernote token"
-yo_api_key:     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-yo_user:        "Yo username"   # Set null to yo all
-interval:       300             # polling interval
+evernote_token:  "Your evernote authentication token"
+evernote_filter: "tag:notify"    # Search filter
+                                 # https://dev.evernote.com/doc/articles/search_grammar.php
+
+yo_api_key:      "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+yo_user:         "Yo username"   # Send Yo to (set null to send Yo to all subscribers)
+
+interval:        900             # polling interval
