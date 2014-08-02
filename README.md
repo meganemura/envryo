@@ -6,11 +6,20 @@ Evernote various notifier via Yo.
 
 1. Invoke it with config
 
-    envryo --config=config.yml
+    `envryo --config=config.yml`
 
 2. Update evernote note
 
 3. Envryo yo to you or all
+
+## Configuration (config.yml)
+
+```yaml
+evernote_token: "Your evernote token"
+yo_api_key:     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+yo_user:        "Yo username"   # Set null to yo all
+interval:       300
+```
 
 ## Installation
 
