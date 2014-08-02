@@ -18,7 +18,7 @@ Evernote various notifier via Yo.
 evernote_token: "Your evernote token"
 yo_api_key:     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 yo_user:        "Yo username"   # Set null to yo all
-interval:       300
+interval:       300             # polling interval
 ```
 
 ## Installation
