@@ -1,6 +1,16 @@
 # Envryo
 
-TODO: Write a gem description
+Evernote various notifier via Yo.
+
+## Usage
+
+1. Invoke it with config
+
+    envryo --config=config.yml
+
+2. Update evernote note
+
+3. Envryo yo to you or all
 
 ## Installation
 
@@ -16,13 +26,9 @@ Or install it yourself as:
 
     $ gem install envryo
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/envryo/fork )
+1. Fork it ( https://github.com/meganemura/envryo/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
