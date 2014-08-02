@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Envryo::VERSION
   spec.authors       = ["meganemura"]
   spec.email         = ["mura2megane@gmail.com"]
-  spec.summary       = %q{Evernote various notifier via Yo.}
+  spec.summary       = %q{Evernote various events notifier via Yo.}
   spec.description   = spec.description
   spec.homepage      = ""
   spec.license       = "MIT"
