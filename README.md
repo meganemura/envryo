@@ -12,9 +12,9 @@ Evernote various events notifier via Yo.
 
     `envryo --config=config.yml`
 
-2. Update evernote note
+2. Update evernote note which is tagged as `notify` (configurable)
 
-3. Envryo yo to you or all
+3. Envryo sends yo to you or all subscribers
 
 ## Configuration (config.yml)
 
