@@ -1,6 +1,10 @@
 # Envryo
 
-Evernote various notifier via Yo.
+[![Gem Version](https://img.shields.io/gem/v/envryo.svg)](http://badge.fury.io/rb/envryo)
+[![Code Climate](https://img.shields.io/codeclimate/github/meganemura/envryo.svg)](https://codeclimate.com/github/meganemura/envryo)
+[![Dependency Status](https://gemnasium.com/meganemura/envryo.svg)](https://gemnasium.com/meganemura/envryo)
+
+Evernote various events notifier via Yo.
 
 ## Usage
 
@@ -15,10 +19,14 @@ Evernote various notifier via Yo.
 ## Configuration (config.yml)
 
 ```yaml
-evernote_token: "Your evernote token"
-yo_api_key:     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-yo_user:        "Yo username"   # Set null to yo all
-interval:       300             # polling interval
+evernote_token:  "Your evernote authentication token"
+evernote_filter: "tag:notify"    # Search filter
+                                 # https://dev.evernote.com/doc/articles/search_grammar.php
+
+yo_api_key:      "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+yo_user:         "Yo username"   # Send Yo to (set null to send Yo to all subscribers)
+
+interval:        900             # polling interval
 ```
 
 ## Installation
