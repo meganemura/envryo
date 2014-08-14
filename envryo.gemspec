@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["mura2megane@gmail.com"]
   spec.summary       = %q{Evernote various events notifier via Yo.}
   spec.description   = spec.description
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/meganemura/envryo"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
